@@ -1,0 +1,71 @@
+.buttons button {
+  background-color: black;
+  color: #fff;
+  padding: 10px;
+  width: 100px;
+  border: none;
+  font-weight: 600;
+  margin: 10px;
+  cursor: pointer;
+}
+#tostBox {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 20px;
+}
+.toasty {
+  width: 200px;
+  background-color: rgb(239, 239, 239);
+  width: 200px;
+  position: relative;
+  font-weight: 500;
+  margin: 15px 0;
+  box-shadow: 0 0 5px 0 black;
+  transform: translateX(100%);
+  animation: moveleft 0.5s linear forwards;
+}
+
+@keyframes moveleft {
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.toasty i {
+  margin: 25px 5px;
+  color: green;
+  font-size: 25px;
+}
+.toasty.error i {
+  color: red;
+}
+.toasty.invalid i {
+  color: orange;
+}
+.toasty::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  background: green;
+  animation: anim 5s linear forwards;
+}
+@keyframes anim {
+  100% {
+    width: 0;
+  }
+}
+
+.toasty.error::after {
+  background: red;
+}
+.toasty.invalid::after {
+  background: orange;
+}
